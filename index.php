@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$msgrec = $_SESSION['msgrec'];
-$media = $_SESSION['media'];
-$msgnota=  $_SESSION['msgnota'];
+$msgrec = $_SESSION['msgrec'] ?? '';
+$media = $_SESSION['media'] ?? '';
+$msgnota=  $_SESSION['msgnota'] ?? '';
 
 ?>
 

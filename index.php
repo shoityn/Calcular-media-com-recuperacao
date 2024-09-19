@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-$msgrec = $_SESSION['msgrec'] ?? '';
-$media = $_SESSION['media'] ?? '';
-$msgnota=  $_SESSION['msgnota'] ?? '';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,21 +29,6 @@ $msgnota=  $_SESSION['msgnota'] ?? '';
             font-size: 24px;
             color: #007bff;
         }
-
-        .result {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-            
-        }
-
-       
-
-        .recovery {
-            margin-top: 20px;
-            text-align: center;
-        }
-
     </style>
 </head>
 <body>
@@ -67,27 +43,6 @@ $msgnota=  $_SESSION['msgnota'] ?? '';
 
             <button class="btn btn-primary" type="submit">Calcular</button>
         </form>
-
-        <div class="result">
-            <span id="media">Média: <?php echo htmlspecialchars($media) ?> </span> <br>
-            <span id="msgnota"><?php echo htmlspecialchars($msgnota) ?></span>
-        </div>
-
-        <?php if ($media < 7 && $media >= 4) { ?>
-
-        <div class="recovery">
-            <form action="recuperar.php" method="post">
-                <input type="number" class="form-control" name="notarec" id="notarec" placeholder="Nota de recuperação" required> <br>
-                <input type="hidden" name="media" value="<?php echo $media ?>"> 
-                <button class="btn btn-warning" type="submit">Recuperar</button>
-            </form>
-        </div>
-        <?php } ?>
-
-        <div class="result">
-            <span id="msgrecuperacao"><?php echo htmlspecialchars($msgrec) ?></span>
-        </div>
-
     </fieldset>
 </body>
 </html>
